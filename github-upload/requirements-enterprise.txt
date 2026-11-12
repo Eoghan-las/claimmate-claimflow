@@ -1,4 +1,0 @@
--r requirements-dev.txt
-# Runtime verified on Python 3.11.15 in edu_agent; model servers run separately.
-langgraph==1.0.10
-httpx==0.28.1
