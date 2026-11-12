@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ClaimMate · 医疗险条款工作台</title><link rel="stylesheet" href="/static/workbench.css"><script src="/static/workbench.js" defer></script></head>
+<body>
+<header><div class="brand">CM<span>ClaimMate</span></div><span class="divider"></span><span>医疗险条款工作台</span><span class="env">本机联调</span><button id="logout" class="quiet" hidden>退出</button></header>
+<main>
+<div class="page-heading"><div><p class="eyebrow">知识查询 / 医疗保险</p><h1>查条款，也核对依据。</h1><p class="intro">选择产品后提问，回答与原文放在一起核对。</p></div><div class="health"><span id="health-dot"></span><span id="health-text">正在检查服务</span></div></div>
+<aside class="notice">当前仅收录三款产品的部分公开页面。回答用于条款参考；客户的具体核保结论由核保人员判断。</aside>
+<section id="login-panel" class="login-panel" hidden><div><h2>登录本机工作台</h2><p>使用本机配置中的访问令牌。</p></div><form id="login-form"><label for="token">访问令牌</label><div class="inline"><input id="token" type="password" autocomplete="off" required><button type="submit">登录</button></div><p id="login-error" role="alert"></p></form></section>
+<div id="workspace" class="workspace" hidden>
+<section class="query-panel"><div class="step-title"><span>01</span><h2>选择资料</h2></div><label for="product">产品及版本</label><select id="product"><option value="">尚未选择产品</option></select><p id="scope" class="scope">通用概念可以直接提问。具体条款需要选择产品。</p><div class="step-title second"><span>02</span><h2>描述问题</h2></div><form id="ask-form"><label for="question">需要查什么？</label><textarea id="question" rows="7" minlength="2" maxlength="2000" placeholder="例如：等待期如何规定？哪些情况不受等待期限制？" required></textarea><div class="examples"><span>试着问</span><button type="button" data-example="waiting">等待期</button><button type="button" data-example="definition">术语释义</button><button type="button" data-example="general">通用概念</button></div><div class="submit-row"><span>Ctrl + Enter 提问</span><button id="ask-button" type="submit">查找依据 <span aria-hidden="true">↗</span></button></div></form><p id="request-error" role="alert"></p></section>
+<section class="answer-panel" aria-live="polite"><div class="step-title"><span>03</span><h2>核对回答与原文</h2><span id="result-status" class="result-status"></span></div><div id="empty" class="empty"><div class="paper-icon" aria-hidden="true">§</div><h3>回答会附上出处</h3><p>可以打开引用查看完整原文页，<br>也可以回放本次查询记录。</p></div><div id="loading" class="loading" hidden><span class="spinner"></span><p>正在查找条款并核对引用…</p><small>首次加载本地模型可能需要较长时间。</small></div><div id="result" hidden><div id="answer"></div><div id="missing-wrap" class="missing" hidden><h3>还需核实</h3><ul id="missing"></ul></div><div id="citations"></div><div id="evidence-wrap" hidden><h3>已找到的资料</h3><div id="evidence"></div></div><div class="audit-line"><span id="run-id"></span><button id="replay" class="quiet" type="button">回放记录</button></div><details class="diagnostics"><summary>查看检索与运行记录</summary><div id="route-summary" class="route-summary"></div><pre id="trace"></pre></details><p class="answer-note">引用已核对原文位置；条款含义、适用条件及结论仍需人工复核。</p></div></section>
+</div>
+</main>
+<dialog id="source-dialog"><div class="source-header"><div><p class="eyebrow">原文核对</p><h2 id="source-title"></h2></div><button id="close-source" class="quiet" aria-label="关闭原文">关闭 ×</button></div><p id="source-meta"></p><div id="source-body"></div><a id="source-link" target="_blank" rel="noopener noreferrer">打开公开来源 ↗</a></dialog>
+<footer>ClaimMate <span>·</span> 资料答疑与核保辅助 <span>·</span> 本机功能验证环境</footer>
+</body></html>
