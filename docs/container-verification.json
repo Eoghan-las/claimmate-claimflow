@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-12",
+  "platform": "linux/amd64",
+  "image_tag": "claimmate-demo:submission-20261112",
+  "image_id": "sha256:96ab394f47c995269ecaa616322fcd8399af694033b4846a46c28c89a3eb5f38",
+  "image_bytes": 70108492,
+  "checks": [
+    {
+      "check": "health",
+      "result": "passed",
+      "mode": "SYNTHETIC_FUNCTIONAL",
+      "external_model_connected": false
+    },
+    {
+      "check": "authentication",
+      "result": "passed",
+      "unauthenticated_status": 401
+    },
+    {
+      "check": "policy_source_dependencies",
+      "result": "passed"
+    },
+    {
+      "check": "multi_turn_product_reference",
+      "result": "passed"
+    },
+    {
+      "check": "ambiguous_reference",
+      "result": "passed"
+    },
+    {
+      "check": "missing_materials",
+      "result": "passed",
+      "status": "AWAITING_SUPPLEMENT"
+    },
+    {
+      "check": "supplementation_and_calculation",
+      "result": "passed",
+      "estimate": "640.01",
+      "formal_decision": false,
+      "material_revision": 2
+    }
+  ],
+  "public_deployment": false,
+  "test_container_cleanup": "stopped after verification; temporary container configured with --rm"
+}
